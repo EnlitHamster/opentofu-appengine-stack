@@ -1,0 +1,2 @@
+-r app/requirements.txt
+pyyaml~=6.0.2

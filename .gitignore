@@ -1,0 +1,19 @@
+# Python environments
+.venv
+venv
+
+# Editor configs
+.vscode
+
+# GCloud generated TOFU files
+generated
+
+# Account key files
+*-key.json
+
+# OpenTofu generated files
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+terraform.tfstate
+*.plan

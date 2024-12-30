@@ -1,0 +1,21 @@
+project_name: Tofu Testing Project
+project_id: tofu-testing-project
+location_id: europe-west4
+service_account_name: opentofu
+service_account_key_file: opentofu-tofu-testing-project-key.json
+
+github_personal_access_token: ...
+github_cloud_build_installation_id: ...
+
+apis:
+- iam.googleapis.com
+- iamcredentials.googleapis.com
+- iap.googleapis.com
+- appengine.googleapis.com
+- appenginereporting.googleapis.com
+- cloudtasks.googleapis.com
+- sql-component.googleapis.com
+- sqladmin.googleapis.com
+- logging.googleapis.com
+- storage-component.googleapis.com
+- storage.googleapis.com
