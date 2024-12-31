@@ -2,7 +2,7 @@ import yaml
 import subprocess
 
 
-with open('config.yml') as config_file:
+with open('../config.yml') as config_file:
     config = yaml.safe_load(config_file.read())
 
 project_name = config['project_name']
@@ -17,8 +17,6 @@ commands = f'''gcloud projects create {project_id} --name "{project_name}"
 gcloud config set project {project_id}
 gcloud services enable cloudresourcemanager.googleapis.com
 gcloud iam service-accounts create {service_account_name}
-gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/editor"
-gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/serviceusage.serviceUsageAdmin"
 gcloud iam service-accounts keys create {service_account_key_file} --iam-account="{full_service_account_name}"'''
 
 for command in commands.splitlines():

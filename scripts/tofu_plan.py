@@ -1,11 +1,11 @@
 import subprocess
 
 
-def run() -> None:
+def run(source: str) -> None:
     command = (
         'docker run'
         ' --workdir=/srv/workspace'
-        ' --mount type=bind,source=.,target=/srv/workspace'
+        f' --mount type=bind,source="{source}",target=/srv/workspace'
         ' ghcr.io/opentofu/opentofu:latest'
         ' plan -out=main.plan'
     )
@@ -14,4 +14,8 @@ def run() -> None:
 
 
 if __name__ == '__main__':
-    run()
+    from utils import get_tofu_dir
+    source = get_tofu_dir()
+
+    print(f'Tofu directory: {source}')
+    run(source)
