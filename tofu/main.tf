@@ -1,13 +1,13 @@
 provider "google" {
   project = local.config.project_id
   region = local.config.location_id
-  credentials = local.config.service_account_key_file
+  credentials = local.service_account_key_file
 }
 
 provider "google-beta" {
   project = local.config.project_id
   region = local.config.location_id
-  credentials = local.config.service_account_key_file
+  credentials = local.service_account_key_file
 }
 
 data "google_project" "current_project" {

@@ -9,7 +9,7 @@ project_name = config['project_name']
 project_id = config['project_id']
 location_id = config['location_id']
 service_account_name = config['service_account_name']
-service_account_key_file = config['service_account_key_file']
+service_account_key_file = config['service_account_key_filename']
 
 full_service_account_name = f'{service_account_name}@{project_id}.iam.gserviceaccount.com'
 

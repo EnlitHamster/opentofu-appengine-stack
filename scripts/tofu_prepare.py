@@ -4,8 +4,7 @@ import tofu_plan
 
 
 if __name__ == '__main__':
-    source = utils.get_tofu_dir()
-    print(f'Tofu directory: {source}')
+    config = utils.Config()
 
-    tofu_init.run(source)
-    tofu_plan.run(source)
+    tofu_init.run(config)
+    tofu_plan.run(config)

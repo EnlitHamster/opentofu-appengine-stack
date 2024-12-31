@@ -9,7 +9,7 @@ github_cloud_build_installation_id: 59004159
 
 # OpenTofu service account configuration
 service_account_name: opentofu
-service_account_key_file: opentofu-playground-tofu-project-key.json
+service_account_key_filename: opentofu-playground-tofu-project-key.json
 service_account_roles:
 - roles/editor
 - roles/serviceusage.serviceUsageAdmin
