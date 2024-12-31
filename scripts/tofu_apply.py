@@ -7,6 +7,7 @@ def run(config: utils.Config = utils.Config()) -> None:
         'docker run'
         ' --workdir=/srv/workspace'
         f' --mount type=bind,source="{config.tofu_dir}",target=/srv/workspace'
+        ' --rm'
         ' ghcr.io/opentofu/opentofu:latest'
         ' apply "/srv/workspace/main.plan"'
     )

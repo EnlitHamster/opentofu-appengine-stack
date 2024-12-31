@@ -15,6 +15,7 @@ def run(config: utils.Config = utils.Config()) -> None:
         f' --mount type=bind,source={config.config_file},target=/srv/config/config.yml'
         f' --mount type=bind,source={config.secrets_file},target=/srv/config/secrets.yml'
         f' --mount type=bind,source={config.token_file},target=/srv/config/{config.token_filename}'
+        ' --rm'
         ' ghcr.io/opentofu/opentofu:latest'
         ' plan -out=main.plan'
     )
