@@ -1,11 +1,13 @@
 project_name: Tofu Testing Project
-project_id: tofu-testing-project
+project_id: playground-tofu-project
 location_id: europe-west4
 service_account_name: opentofu
-service_account_key_file: opentofu-tofu-testing-project-key.json
+service_account_key_file: opentofu-playground-tofu-project-key.json
 
-github_personal_access_token: ...
-github_cloud_build_installation_id: ...
+# Follow the guide below to configure the Cloud Build connection to the source code repository.
+# https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github?generation=2nd-gen#connecting_a_github_host_programmatically
+repo_name: EnlitHamster/example-appengine
+github_cloud_build_installation_id: 59004159
 
 apis:
 - iam.googleapis.com

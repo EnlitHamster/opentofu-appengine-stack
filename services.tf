@@ -5,4 +5,4 @@ module "project-services" {
   project_id = local.config.project_id
 
   activate_apis = tolist(local.config.apis)
-}
+} 

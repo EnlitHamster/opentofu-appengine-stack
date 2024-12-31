@@ -17,3 +17,6 @@ generated
 .terraform.tfstate.lock.info
 terraform.tfstate
 *.plan
+
+# Secrets file
+secrets.yml
