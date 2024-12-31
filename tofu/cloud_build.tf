@@ -6,6 +6,8 @@ resource "google_secret_manager_secret" "github_token_secret" {
   replication {
     auto {}
   }
+  
+  depends_on = [ module.project-services, google_project_iam_member.opentofu_roles ]
 }
 
 resource "google_secret_manager_secret_version" "github_token_secret_version" {
@@ -36,5 +38,5 @@ resource "google_cloudbuildv2_connection" "github_repo" {
     }
   }
 
-  depends_on = [ google_secret_manager_secret_iam_policy.github_token_secret_policy ]
+  depends_on = [ google_secret_manager_secret_iam_policy.github_token_secret_policy, module.github-oidc ]
 }

@@ -13,4 +13,6 @@ module "github-oidc" {
       attribute = "attribute.repository/user/repo"
     }
   }
+
+  depends_on = [ module.project-services, google_project_iam_member.opentofu_roles ]
 }
