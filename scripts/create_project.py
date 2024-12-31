@@ -16,7 +16,10 @@ full_service_account_name = f'{service_account_name}@{project_id}.iam.gserviceac
 commands = f'''gcloud projects create {project_id} --name "{project_name}"
 gcloud config set project {project_id}
 gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
 gcloud iam service-accounts create {service_account_name}
+gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/editor"
+gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/resourcemanager.projectIamAdmin"
 gcloud iam service-accounts keys create {service_account_key_file} --iam-account="{full_service_account_name}"'''
 
 for command in commands.splitlines():

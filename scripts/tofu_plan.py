@@ -4,10 +4,6 @@ import utils
 
 
 def run(config: utils.Config = utils.Config()) -> None:
-    print(config.config_file)
-    print(config.secrets_file)
-    print(config.token_file)
-
     command = (
         'docker run'
         ' --workdir=/srv/workspace'

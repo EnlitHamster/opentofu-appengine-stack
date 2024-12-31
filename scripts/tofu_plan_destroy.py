@@ -2,6 +2,7 @@ import subprocess
 import utils
 
 
+
 def run(config: utils.Config = utils.Config()) -> None:
     command = (
         'docker run'
@@ -12,7 +13,7 @@ def run(config: utils.Config = utils.Config()) -> None:
         f' --mount type=bind,source={config.token_file},target=/srv/config/{config.token_filename}'
         ' --rm'
         ' ghcr.io/opentofu/opentofu:latest'
-        ' apply "/srv/workspace/main.plan"'
+        ' plan -destroy -out=destroy.plan'
     )
 
     subprocess.run(command, shell=True, check=True)
