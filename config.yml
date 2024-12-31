@@ -29,7 +29,7 @@ apis:
 service_account_name: opentofu
 service_account_key_filename: opentofu-playground-tofu-project-key.json
 service_account_roles:
-- roles/appengine.appAdmin
+- roles/appengine.appCreator
 - roles/iam.serviceAccountAdmin
 - roles/iam.workloadIdentityPoolAdmin
 - roles/secretmanager.admin
