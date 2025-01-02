@@ -8,8 +8,8 @@ module "github_oidc" {
   attribute_condition = "assertion.repository == \"${local.config.repo_name}\""
 
   sa_mapping = {
-    (data.google_service_account.opentofu_service_account.account_id) = {
-      sa_name = data.google_service_account.opentofu_service_account.name
+    (google_service_account.github_actions_service_account.account_id) = {
+      sa_name = google_service_account.github_actions_service_account.name
       attribute = "attribute.repository/user/repo"
     }
   }
