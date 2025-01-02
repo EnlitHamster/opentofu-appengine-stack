@@ -28,11 +28,6 @@ class Config:
         return _get_mount_path(self._root_dir / 'config.yml')
     
     @property
-    def secrets_file(self) -> str:
-        return _get_mount_path(self._root_dir / 'secrets.yml')
-    
-
-    @property
     def token_filename(self) -> str:
         with open(self._root_dir / 'config.yml') as config_file:
             cfg_data = yaml.safe_load(config_file.read())

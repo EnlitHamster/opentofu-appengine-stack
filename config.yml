@@ -5,8 +5,7 @@ location_id: europe-west4
 # Ap Engine specific configuration
 app_engine_location_id: europe-west
 
-# Follow the guide below to configure the Cloud Build connection to the source code repository.
-# https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github?generation=2nd-gen#connecting_a_github_host_programmatically
+# Used by the Workload Identity Provider to assert the request is coming from the correct source.
 repo_name: EnlitHamster/example-appengine
 
 # GCP APIs required for by the stack
@@ -27,7 +26,6 @@ apis:
 service_account_name: opentofu
 service_account_key_filename: opentofu-playground-tofu-project-key.json
 service_account_roles:
-- roles/appengine.appCreator
 - roles/iam.serviceAccountAdmin
 - roles/iam.workloadIdentityPoolAdmin
 - roles/secretmanager.admin

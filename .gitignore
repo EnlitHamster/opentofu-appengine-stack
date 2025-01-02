@@ -20,6 +20,3 @@ terraform.tfstate*
 *.plan
 *.dot
 *.svg
-
-# Secrets file
-secrets.yml
