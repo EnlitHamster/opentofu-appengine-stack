@@ -27,6 +27,11 @@ resource "google_project_iam_member" "opentofu_roles" {
   role = each.value
 
   depends_on = [ module.project_services ]
+
+  # Give time to the IAM roles to be effective to avoid WIF erroring due to missing permissions.
+  provisioner "local-exec" {
+    command = "sleep 10"
+  }
 }
 
 resource "random_id" "stack_version" {
