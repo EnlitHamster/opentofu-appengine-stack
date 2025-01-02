@@ -25,11 +25,15 @@ resource "google_project_iam_member" "opentofu_roles" {
 
   for_each = toset(local.config.service_account_roles)
   role = each.value
+
+  depends_on = [ module.project_services ]
 }
 
 resource "google_service_account" "github_actions_service_account" {
   project = local.config.project_id
   account_id = "github-actions-service-account"
+
+  depends_on = [ module.project_services ]
 }
 
 resource "google_project_iam_member" "github_actions_service_account_roles" {

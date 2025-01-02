@@ -1,4 +1,4 @@
-module "github-oidc" {
+module "github_oidc" {
   source = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc"
   version = "~> 4.0"
 
@@ -14,5 +14,5 @@ module "github-oidc" {
     }
   }
 
-  depends_on = [ module.project-services, google_project_iam_member.opentofu_roles ]
+  depends_on = [ module.project_services, google_project_iam_member.opentofu_roles ]
 }

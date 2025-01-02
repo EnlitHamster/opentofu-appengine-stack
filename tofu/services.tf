@@ -1,4 +1,4 @@
-module "project-services" {
+module "project_services" {
   source  = "terraform-google-modules/project-factory/google//modules/project_services"
   version = "~> 17.1"
 
