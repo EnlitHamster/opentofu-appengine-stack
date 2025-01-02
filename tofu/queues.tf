@@ -12,5 +12,5 @@ resource "google_cloud_tasks_queue" "task_queue" {
     max_retry_duration = "3s"
   }
 
-  depends_on = [ google_project_iam_member.opentofu_roles ]
+  depends_on = [google_project_iam_member.opentofu_roles]
 }
