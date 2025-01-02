@@ -8,11 +8,9 @@ app_engine_location_id: europe-west
 # Follow the guide below to configure the Cloud Build connection to the source code repository.
 # https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github?generation=2nd-gen#connecting_a_github_host_programmatically
 repo_name: EnlitHamster/example-appengine
-github_cloud_build_installation_id: 59004159
 
 # GCP APIs required for by the stack
 apis:
-- iamcredentials.googleapis.com
 - iap.googleapis.com
 - appengine.googleapis.com
 - appenginereporting.googleapis.com

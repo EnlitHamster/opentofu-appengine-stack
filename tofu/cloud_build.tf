@@ -32,7 +32,7 @@ resource "google_cloudbuildv2_connection" "github_repo" {
   name = "github-${local.config.project_id}-connection"
 
   github_config {
-    app_installation_id = local.config.github_cloud_build_installation_id
+    app_installation_id = local.secrets.github_cloud_build_installation_id
     authorizer_credential {
       oauth_token_secret_version = google_secret_manager_secret_version.github_token_secret_version.id
     }
