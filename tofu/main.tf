@@ -76,12 +76,6 @@ resource "google_project_iam_member" "github_actions_service_account_roles" {
   project = local.config.project_id
   member = "serviceAccount:${google_service_account.github_actions_service_account.email}"
 
-  for_each = toset([
-    "roles/appengine.appAdmin",
-    "roles/storage.admin",
-    "roles/cloudbuild.builds.editor",
-    "roles/iam.serviceAccountUser",
-    "roles/iam.workloadIdentityUser"
-  ])
+  for_each = toset(local.config.github_actions_roles)
   role = each.value
 }

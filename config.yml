@@ -31,3 +31,11 @@ service_account_roles:
 - roles/secretmanager.admin
 - roles/serviceusage.serviceUsageAdmin
 - roles/storage.admin
+
+# GitHub Actions service account configuration
+github_actions_roles:
+- roles/appengine.appAdmin
+- roles/storage.admin
+- roles/cloudbuild.builds.editor
+- roles/iam.serviceAccountUser
+- roles/artifactregistry.reader
