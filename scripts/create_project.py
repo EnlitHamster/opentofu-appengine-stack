@@ -10,6 +10,7 @@ project_id = config['project_id']
 location_id = config['location_id']
 service_account_name = config['service_account_name']
 service_account_key_file = config['service_account_key_filename']
+app_engine_region = config['app_engine_location_id']
 
 full_service_account_name = f'{service_account_name}@{project_id}.iam.gserviceaccount.com'
 
@@ -20,7 +21,8 @@ gcloud services enable iam.googleapis.com
 gcloud iam service-accounts create {service_account_name}
 gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/editor"
 gcloud projects add-iam-policy-binding {project_id} --member="serviceAccount:{full_service_account_name}" --role="roles/resourcemanager.projectIamAdmin"
-gcloud iam service-accounts keys create {service_account_key_file} --iam-account="{full_service_account_name}"'''
+gcloud iam service-accounts keys create {service_account_key_file} --iam-account="{full_service_account_name}"
+gcloud app create --region {app_engine_region}'''
 
 for command in commands.splitlines():
     subprocess.run(command, shell=True, check=True)
