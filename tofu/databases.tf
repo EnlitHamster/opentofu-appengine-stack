@@ -18,7 +18,7 @@ resource "google_sql_database_instance" "production" {
 }
 
 resource "google_sql_database" "main" {
-  name="appengine_db"
+  name     = "appengine_db"
   instance = google_sql_database_instance.production.name
 }
 
