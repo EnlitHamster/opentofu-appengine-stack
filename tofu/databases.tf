@@ -14,17 +14,17 @@ resource "google_sql_database_instance" "production" {
     deletion_protection_enabled = true
   }
 
-  depends_on = [google_project_iam_member.opentofu_roles]
+  depends_on = [google_project_iam_member.opentofu]
 }
 
-resource "google_sql_database" "database" {
+resource "google_sql_database" "main" {
   name="appengine_db"
   instance = google_sql_database_instance.production.name
 }
 
-resource "google_sql_user" "appengine_user" {
+resource "google_sql_user" "appengine" {
   name     = "appengine_user"
   instance = google_sql_database_instance.production.name
   host     = "%"
-  password = google_secret_manager_secret_version.database_user_password_secret_version.secret_data
+  password = google_secret_manager_secret_version.database_user_password.secret_data
 }

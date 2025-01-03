@@ -10,7 +10,7 @@ provider "google-beta" {
   credentials = local.service_account_key_file
 }
 
-data "google_project" "current_project" {
+data "google_project" "main" {
   project_id = local.config.project_id
 }
 
