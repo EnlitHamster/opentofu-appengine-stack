@@ -5,8 +5,8 @@ module "github_oidc" {
   project_id = local.config.project_id
 
   // Use a stack version to provision a new pool and provider, as destroying them does not free the ID up for 30 days.
-  pool_id             = "gh-pool-${google_secret_manager_secret_version.stack_version.secret_data}"
-  provider_id         = "gh-prov-${google_secret_manager_secret_version.stack_version.secret_data}"
+  pool_id             = "gh-pool-${random_id.stack_version.dec}"
+  provider_id         = "gh-prov-${random_id.stack_version.dec}"
   attribute_condition = "assertion.repository == \"${local.config.repo_name}\""
 
   sa_mapping = {

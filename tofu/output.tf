@@ -28,3 +28,8 @@ output "production_database_user_password" {
   value       = google_sql_user.appengine.password
   sensitive   = true
 }
+
+output "appengine_url" {
+  description = "The endpoint for the App Engine service"
+  value       = "https://${google_app_engine_application.app.default_hostname}"
+}

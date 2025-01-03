@@ -26,5 +26,5 @@ resource "google_sql_user" "appengine" {
   name     = "appengine_user"
   instance = google_sql_database_instance.production.name
   host     = "%"
-  password = google_secret_manager_secret_version.database_user_password.secret_data
+  password = data.google_secret_manager_secret_version.database_user_password.secret_data
 }

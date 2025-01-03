@@ -1,3 +1,4 @@
+import add_database_password
 import create_tofu_account
 import init_app_engine
 import init_project
@@ -9,4 +10,5 @@ if __name__ == '__main__':
 
     init_project.run(config)
     create_tofu_account.run(config)
+    add_database_password.run(config)
     init_app_engine.run(config)

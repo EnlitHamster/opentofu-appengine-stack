@@ -18,36 +18,6 @@ moved {
 }
 
 moved {
-  from = google_secret_manager_secret.database_user_password_secret
-  to   = google_secret_manager_secret.database_user_password
-}
-
-moved {
-  from = google_secret_manager_secret.stack_version_secret
-  to   = google_secret_manager_secret.stack_version
-}
-
-moved {
-  from = google_secret_manager_secret_iam_policy.database_user_password_secret_policy
-  to   = google_secret_manager_secret_iam_policy.database_user_password
-}
-
-moved {
-  from = google_secret_manager_secret_iam_policy.stack_version_secret_policy
-  to   = google_secret_manager_secret_iam_policy.stack_version
-}
-
-moved {
-  from = google_secret_manager_secret_version.database_user_password_secret_version
-  to   = google_secret_manager_secret_version.database_user_password
-}
-
-moved {
-  from = google_secret_manager_secret_version.stack_version_secret_version
-  to   = google_secret_manager_secret_version.stack_version
-}
-
-moved {
   from = google_service_account.github_actions_service_account
   to   = google_service_account.github_actions
 }
