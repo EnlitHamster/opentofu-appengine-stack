@@ -4,7 +4,7 @@ import tofu_apply_destroy
 
 
 if __name__ == '__main__':
-    config = utils.Config()
+    config = utils.TofuFig()
 
     tofu_plan_destroy.run(config)
     tofu_apply_destroy.run(config)

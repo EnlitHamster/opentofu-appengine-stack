@@ -3,7 +3,7 @@ import utils
 
 
 
-def run(config: utils.Config = utils.Config()) -> None:
+def run(config: utils.TofuFig = utils.TofuFig()) -> None:
     command = (
         'docker run'
         ' --workdir=/srv/workspace'
